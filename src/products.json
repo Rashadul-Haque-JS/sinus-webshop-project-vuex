@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "name": "Sinus Hoodie",
+    "size": "s , m, l , xl",
+    "price": "799",
+    "itemImg": "../assets/hoodie_red.svg"
+  },
+  {
+    "id": 2,
+    "name": "Sinus Cap",
+    "size": "Universal",
+    "price": "299",
+    "itemImg": "../assets/cap_ash.svg"
+  },
+  {
+    "id": 3,
+    "name": "Sinus T-Shirt",
+    "size": "s , m, l , xl",
+    "price": "399",
+    "itemImg": "../assets/tshirt_pink.svg"
+  },
+  {
+    "id": 4,
+    "name": "Sinus Totebag",
+    "size": "One size",
+    "price": "299",
+    "itemImg": "../assets/tote_bag_purple.svg"
+  },
+  {
+    "id": 5,
+    "name": "Sinus Socks",
+    "size": "s , m, l , xl",
+    "price": "99",
+    "itemImg": "../assets/socks_blue.svg"
+  },
+  {
+    "id": 6,
+    "name": "Sinus Wheel",
+    "size": "One size",
+    "price": "199",
+    "itemImg": "../assets/wheel_red.svg"
+  },
+  {
+    "id": 7,
+    "name": "Sinus Skateboard",
+    "size": "One size",
+    "price": "399",
+    "itemImg": "../assets/skateboard.svg"
+  },
+  {
+    "id": 8,
+    "name": "Sinus Hoodie",
+    "size": "s , m, l , xl",
+    "price": "799",
+    "itemImg": "../assets/hoodie_black.svg"
+  },
+  {
+    "id": 9,
+    "name": "Sinus T-Shirt",
+    "size": "s , m, l , xl",
+    "price": "299",
+    "itemImg": "../assets/tshirt_yellow.svg"
+  },
+  {
+    "id": 10,
+    "name": "Sinus Socks",
+    "size": "s , m, l , xl",
+    "price": "99",
+    "itemImg": "../assets/hoodie_blue.svg"
+  },
+  {
+    "id": 11,
+    "name": "Sinus Cap",
+    "size": "Universal",
+    "price": "199",
+    "itemImg": "../assets/cap_red.svg"
+  },
+  {
+    "id": 12,
+    "name": "Sinus Hoodie",
+    "size": "s , m, l , xl",
+    "price": "799",
+    "itemImg": "../assets/hoodie_green.svg"
+  }
+]

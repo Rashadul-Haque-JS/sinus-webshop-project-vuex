@@ -22,12 +22,18 @@
   </div>
 </template>
 
+<script>
+export default {
+  
+};
+</script>
+
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+
   color: #2c3e50;
 }
 
@@ -39,12 +45,11 @@
   justify-content: space-between;
   align-items: center;
 
-.sinus-logo{
-width: 184px;
-height: 80px;
-margin-left: 24px;
-}
-
+  .sinus-logo {
+    width: 184px;
+    height: 80px;
+    margin-left: 24px;
+  }
 
   a {
     font-weight: bold;
@@ -60,7 +65,9 @@ margin-left: 24px;
     justify-content: space-between;
     align-items: center;
 
-    a{margin: 0px 12px;}
+    a {
+      margin: 0px 12px;
+    }
   }
 
   .user-action {
@@ -68,21 +75,23 @@ margin-left: 24px;
     justify-content: space-between;
     align-items: center;
     margin-right: 16px;
-    input{
+    input {
       padding: 0px 5px;
       width: 208px;
       height: 24px;
       border: none;
-      border-radius: 4px; 
+      border-radius: 4px;
     }
 
-    a{margin: 0px 12px;}
-    .avatar{
+    a {
+      margin: 0px 12px;
+    }
+    .avatar {
       width: 24px;
       height: 24px;
     }
 
-    .login{
+    .login {
       width: 40px;
       height: 40px;
     }
