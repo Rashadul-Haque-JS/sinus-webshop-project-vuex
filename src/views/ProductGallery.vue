@@ -6,8 +6,7 @@
         <h3>OFFERS</h3>
       </div>
       <div class="product-list">
-        <SinglePordsCardLarg
-          class="home"
+        <ProductsCardFroList
           v-for="product in products"
           :key="product.id"
           :product="product"
@@ -19,20 +18,21 @@
 </template>
 
 <script>
-import SinglePordsCardLarg from "../components/SinglePordsCardLarg.vue";
-import Footer from "../components/Footer.vue"
+import ProductsCardFroList from "../components/ProductsCardForList.vue";
+import Footer from "../components/Footer.vue";
+import {mapGetters} from 'vuex'
 export default {
-  components: { SinglePordsCardLarg, Footer },
+  components: { ProductsCardFroList, Footer },
   data() {
     return {
      
     };
   },
 
+ 
+
   computed:{
-    products(){
-      return this.$store.state.products
-    }
+   ...mapGetters({products: 'productsList'})
   }
 };
 </script>

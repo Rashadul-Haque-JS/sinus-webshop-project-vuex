@@ -1,40 +1,43 @@
 <template>
   <div class="card-layout">
     <div class="product-image">
-      <img
-        class="cart-in-card"
-        src="@/assets/cart_white.svg"
-        alt="Cart"
-      />
+      <img class="cart-icon" src="@/assets/love_white.svg" alt="Icon" />
       <img
         class="single-product"
-        :src="image"
-        :alt="ItemImage"
+        :src="require(`../assets/${item.itemImg}.svg`)"
       />
     </div>
     <div class="product-info">
-      <img src="@/assets/icon_love_white.svg" alt="icon" />
+      <img src="@/assets/love_icon.svg" alt="icon" />
       <h3 class="name">{{ item.name }}</h3>
-      <p class="p-first">{{ item.size }}</p>
-      <p class="p-last">{{ item.price }}</p>
+      <p class="product-size">{{ item.size }}</p>
+      <p class="product-price">SEK {{ "" + item.price }}:-</p>
+      <button class="btn" @click.prevent="viewProduct()">VIEW DETAILS</button>
       <h3 class="rating">*****</h3>
     </div>
   </div>
 </template>
 
 <script>
+
+
 export default {
-props:{product:Object},
- data(){
-   return{
-     image: this.product.itemImg,
-     item :this.product
-   }
+  props: { product: Object },
+  data() {
+    return {
+      item: this.product,
+    };
+  },
 
- }
-
-  
+   methods:{
+ 
+    viewProduct(){
+      this.$store.dispatch('productView', this.product)
+      this.$router.push('/Product')
     
+     
+    }
+  },
 };
 </script>
 
@@ -62,14 +65,13 @@ props:{product:Object},
       height: 201px;
     }
 
-    .cart-in-card {
+    .cart-icon {
       position: absolute;
-      width: 40px;
-      height: 40px;
-      left: 80%;
-      right: 4.91%;
-      top: 2.37%;
-      bottom: 87.11%;
+      width: 24px;
+      height: 24px;
+
+      right: 8px;
+      top: 8px;
     }
   }
 
@@ -85,7 +87,7 @@ props:{product:Object},
       width: 20px;
       height: 17px;
       position: absolute;
-      top: 4px;
+      top: 12px;
       right: 12px;
     }
 
@@ -102,9 +104,10 @@ props:{product:Object},
       letter-spacing: -0.2px;
     }
 
-    .p-first {
+    .product-size {
       text-align: start;
       margin-left: 8px;
+      margin-top: 8px;
 
       font-family: Inter;
       font-style: normal;
@@ -118,9 +121,9 @@ props:{product:Object},
       color: #969696;
     }
 
-    .p-last {
+    .product-price {
       text-align: start;
-      margin-left: 8px;
+      margin: 2px 0px 0px 8px;
 
       font-family: Inter;
       font-style: normal;
@@ -135,8 +138,25 @@ props:{product:Object},
     .rating {
       text-align: end;
       position: absolute;
-      bottom: 4px;
+      bottom: -6px;
+      left: 16px;
+      color: #ffd000;
+      font-size: 1.8rem;
+      
+    }
+    .btn {
+      background-color: #1c1c1c;
+      position: absolute;
+      padding: 2px 8px;
+      bottom: 8px;
       right: 8px;
+      color: #fff;
+      cursor: pointer;
+      font-size: .8rem;
+    }
+
+    .btn:hover{
+      transform: translateY(1px);
     }
   }
 }

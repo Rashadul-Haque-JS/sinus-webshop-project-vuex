@@ -6,6 +6,7 @@ import ProductGallery from "../views/ProductGallery.vue";
 import Checkout from "../views/Checkout.vue";
 import Contact from "../views/Contact.vue";
 import Login from "../views/Login.vue";
+import Product from "../views/Product.vue";
 
 Vue.use(VueRouter);
 
@@ -18,7 +19,7 @@ const routes = [
 
   {
     path: "/About",
-    name: "about",
+    name: "About",
     component: About,
   },
 
@@ -27,15 +28,26 @@ const routes = [
     name: "ProductGallery",
     component: ProductGallery,
   },
+
+  {
+    path: "/Product",
+    name: "Product",
+    component: Product,
+  },
+
   {
     path: "/Checkout",
     name: "Checkout",
-    Component: Checkout,
+    component: Checkout,
   },
 
-  { path: "/Contact", name: "Contact", Component: Contact },
+  {
+    path: "/Contact",
+    name: "Contact",
+    component: Contact
+  },
 
-  { path: "/Login", name: "Login", Component: Login },
+  { path: "/Login", name: "Login", component: Login },
 ];
 
 const router = new VueRouter({
