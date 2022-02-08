@@ -4,10 +4,10 @@
       <img class="sinus-logo" src="@/assets/sinus_logo.svg" alt="Sinus logo" />
       <div class="nav-pages">
         <router-link to="/">Home</router-link>
-        <router-link to="/ProductGallery">Products-Gallery</router-link>
+        <router-link to="/ProductGallery">Products</router-link>
         <router-link to="/About">About</router-link>
         <router-link to="/Contact">Contact</router-link>
-        <router-link to="/Product">Product</router-link>
+        <!-- <router-link to="/Product">Product</router-link> -->
       </div>
       <div class="user-action">
         <input type="text" placeholder="Search..." />

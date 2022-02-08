@@ -6,34 +6,30 @@
         <h3>OFFERS</h3>
       </div>
       <div class="product-list">
-        <ProductsCardFroList
-          v-for="product in products"
-          :key="product.id"
-          :product="product"
-        />
+        <router-link :to="'/products/'+product.id" v-for="product in products"
+        :key="product.id"
+      >
+        <ProductsCardFroList :product="product"/>
+      </router-link> 
       </div>
     </div>
-    <Footer/>
+    <Footer />
   </div>
 </template>
 
 <script>
 import ProductsCardFroList from "../components/ProductsCardForList.vue";
 import Footer from "../components/Footer.vue";
-import {mapGetters} from 'vuex'
+import { mapGetters } from "vuex";
 export default {
   components: { ProductsCardFroList, Footer },
   data() {
-    return {
-     
-    };
+    return {};
   },
 
- 
-
-  computed:{
-   ...mapGetters({products: 'productsList'})
-  }
+  computed: {
+    ...mapGetters({ products: "productsList" }),
+  },
 };
 </script>
 
@@ -47,7 +43,6 @@ export default {
   h2 {
     text-align: start;
     margin: 24px 0px 0px 72px;
-
   }
 }
 .gallery {
@@ -59,7 +54,7 @@ export default {
   .side-bar {
     grid-column: 2/3;
     background-color: #07326b;
-    margin-top:32px ;
+    margin-top: 32px;
     grid-row: 1/3;
   }
 
@@ -70,8 +65,7 @@ export default {
     grid-template-columns: repeat(4, 1fr);
     grid-column-gap: 2px;
     grid-row-gap: 60px;
-    margin:32px 0px;
- 
+    margin: 32px 0px;
   }
 }
 </style>

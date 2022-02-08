@@ -1,86 +1,229 @@
 [
   {
     "id": 1,
-    "name": "Sinus Hoodie",
+    "name": "Sinus Hoodie Red",
     "size": "s , m, l , xl",
     "price": "799",
-    "itemImg": "hoodie_red"
+    "itemImg": "hoodie_red",
+    "multiImgs": [
+      "hoodie_red",
+      "hoodie_red",
+      "hoodie_red",
+      "hoodie_red",
+      "hoodie_red"
+    ],
+    "descriptions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "currency": {
+      "local": "SEK",
+      "international": "USD"
+    }
   },
   {
     "id": 2,
     "name": "Sinus Cap",
     "size": "Universal",
     "price": "299",
-    "itemImg": "cap_ash"
+    "itemImg": "cap_ash",
+    "multiImgs": [
+      "cap_ash",
+      "cap_ash",
+      "cap_ash",
+      "cap_ash",
+      "cap_ash"
+    ],
+    "descriptions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "currency": {
+      "local": "SEK",
+      "international": "USD"
+    }
   },
   {
     "id": 3,
     "name": "Sinus T-Shirt",
     "size": "s , m, l , xl",
     "price": "399",
-    "itemImg": "tshirt_pink"
+    "itemImg": "tshirt_pink",
+    "multiImgs": [
+      "tshirt_pink",
+      "tshirt_pink",
+      "tshirt_pink",
+      "tshirt_pink",
+      "tshirt_pink"
+    ],
+    "descriptions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "currency": {
+      "local": "SEK",
+      "international": "USD"
+    }
   },
   {
     "id": 4,
     "name": "Sinus Totebag",
     "size": "One size",
     "price": "299",
-    "itemImg": "tote_bag_purple"
+    "itemImg": "tote_bag_purple",
+    "multiImgs": [
+      "tote_bag_purple",
+      "tote_bag_purple",
+      "tote_bag_purple",
+      "tote_bag_purple"
+    ],
+    "descriptions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "currency": {
+      "local": "SEK",
+      "international": "USD"
+    }
   },
   {
     "id": 5,
     "name": "Sinus Socks",
     "size": "s , m, l , xl",
     "price": "99",
-    "itemImg": "socks_blue"
+    "itemImg": "socks_blue",
+    "multiImgs": [
+      "socks_blue",
+      "socks_blue",
+      "socks_blue",
+      "socks_blue",
+      "socks_blue"
+    ],
+    "descriptions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "currency": {
+      "local": "SEK",
+      "international": "USD"
+    }
   },
   {
     "id": 6,
     "name": "Sinus Wheel",
     "size": "One size",
     "price": "199",
-    "itemImg": "wheel_red"
+    "itemImg": "wheel_red",
+    "multiImgs": [
+      "wheel_red",
+      "wheel_red",
+      "wheel_red",
+      "wheel_red",
+      "wheel_red"
+    ],
+    "descriptions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "currency": {
+      "local": "SEK",
+      "international": "USD"
+    }
   },
   {
     "id": 7,
     "name": "Sinus Skateboard",
     "size": "One size",
     "price": "399",
-    "itemImg": "skateboard"
+    "itemImg": "skateboard",
+    "multiImgs": [
+      "skateboard",
+      "skateboard",
+      "skateboard",
+      "skateboard",
+      "skateboard"
+    ],
+    "descriptions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "currency": {
+      "local": "SEK",
+      "international": "USD"
+    }
   },
   {
     "id": 8,
-    "name": "Sinus Hoodie",
+    "name": "Sinus Hoodie Black",
     "size": "s , m, l , xl",
     "price": "799",
-    "itemImg": "hoodie_black"
+    "itemImg": "hoodie_black",
+    "multiImgs": [
+      "hoodie_black",
+      "hoodie_black",
+      "hoodie_black",
+      "hoodie_black",
+      "hoodie_black"
+    ],
+    "descriptions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "currency": {
+      "local": "SEK",
+      "international": "USD"
+    }
   },
   {
     "id": 9,
     "name": "Sinus T-Shirt",
     "size": "s , m, l , xl",
     "price": "299",
-    "itemImg": "tshirt_yellow"
+    "itemImg": "tshirt_yellow",
+    "multiImgs": [
+      "tshirt_yellow",
+      "tshirt_yellow",
+      "tshirt_yellow",
+      "tshirt_yellow",
+      "tshirt_yellow"
+    ],
+    "descriptions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "currency": {
+      "local": "SEK",
+      "international": "USD"
+    }
   },
   {
     "id": 10,
-    "name": "Sinus Socks",
+    "name": "Sinus Hoodie Ocean",
     "size": "s , m, l , xl",
-    "price": "99",
-    "itemImg": "hoodie-ocean"
+    "price": "799",
+    "itemImg": "hoodie_ocean",
+    "multiImgs": [
+      "hoodie_ocean",
+      "hoodie_ocean",
+      "hoodie_ocean",
+      "hoodie_ocean",
+      "hoodie_ocean"
+    ],
+    "descriptions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "currency": {
+      "local": "SEK",
+      "international": "USD"
+    }
   },
   {
     "id": 11,
     "name": "Sinus Cap",
     "size": "Universal",
     "price": "199",
-    "itemImg": "cap_red"
+    "itemImg": "cap_red",
+    "multiImgs": [
+      "cap_red",
+      "cap_red",
+      "cap_red",
+      "cap_red",
+      "cap_red"
+    ],
+    "descriptions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "currency": {
+      "local": "SEK",
+      "international": "USD"
+    }
   },
   {
     "id": 12,
-    "name": "Sinus Hoodie",
+    "name": "Sinus Hoodie Green",
     "size": "s , m, l , xl",
     "price": "799",
-    "itemImg": "hoodie_green"
+    "itemImg": "hoodie_green",
+    "multiImgs": [
+      "hoodie_green",
+      "hoodie_green",
+      "hoodie_green",
+      "hoodie_green",
+      "hoodie_green"
+    ],
+    "descriptions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "currency": {
+      "local": "SEK",
+      "international": "USD"
+    }
   }
 ]

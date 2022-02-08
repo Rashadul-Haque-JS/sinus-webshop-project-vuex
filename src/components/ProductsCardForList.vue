@@ -12,31 +12,19 @@
       <h3 class="name">{{ item.name }}</h3>
       <p class="product-size">{{ item.size }}</p>
       <p class="product-price">SEK {{ "" + item.price }}:-</p>
-      <button class="btn" @click.prevent="viewProduct()">VIEW DETAILS</button>
+      <button class="btn">VIEW DETAILS</button>
       <h3 class="rating">*****</h3>
     </div>
   </div>
 </template>
 
 <script>
-
-
 export default {
   props: { product: Object },
   data() {
     return {
       item: this.product,
     };
-  },
-
-   methods:{
- 
-    viewProduct(){
-      this.$store.dispatch('productView', this.product)
-      this.$router.push('/Product')
-    
-     
-    }
   },
 };
 </script>
@@ -142,7 +130,6 @@ export default {
       left: 16px;
       color: #ffd000;
       font-size: 1.8rem;
-      
     }
     .btn {
       background-color: #1c1c1c;
@@ -152,10 +139,10 @@ export default {
       right: 8px;
       color: #fff;
       cursor: pointer;
-      font-size: .8rem;
+      font-size: 0.8rem;
     }
 
-    .btn:hover{
+    .btn:hover {
       transform: translateY(1px);
     }
   }

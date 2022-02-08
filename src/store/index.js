@@ -8,26 +8,27 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     products: [...items],
-    productsView:[],
+    productsList:[]
+   
     
   },
   mutations: {
-    productView(state, payload) {
-      state.productsView.push(payload)
+    toCart(state, payload) {
+      state.productsList.push(payload)
     }
   },
   actions: {
-    productView(context, payload) {
-      context.commit("productView", payload)
+    toCart(context, payload) {
+      context.commit("productsList", payload)
     }
   },
 
   getters: {
-    viewProduct: state => state.productsView[state.productsView.length -1],
+    
     productsList: state => state.products,
   
   },
 
-  modules: {
-  },
+  // modules: {
+  // },
 });
