@@ -6,11 +6,13 @@
         <h3>OFFERS</h3>
       </div>
       <div class="product-list">
-        <router-link :to="'/products/'+product.id" v-for="product in products"
-        :key="product.id"
-      >
-        <ProductsCardFroList :product="product"/>
-      </router-link> 
+        <router-link
+          :to="'/products/' + product.id"
+          v-for="product in products"
+          :key="product.id"
+        >
+          <ProductsCardFroList :product="product" />
+        </router-link>
       </div>
     </div>
     <Footer />
@@ -48,7 +50,7 @@ export default {
 .gallery {
   display: grid;
   grid-template-columns: 5fr 1fr;
-  grid-template-rows: 1fr 1fr;
+
   margin-left: 72px;
 
   .side-bar {
@@ -66,6 +68,10 @@ export default {
     grid-column-gap: 2px;
     grid-row-gap: 60px;
     margin: 32px 0px;
+  }
+
+  .footer {
+    margin-top: 196px;
   }
 }
 </style>

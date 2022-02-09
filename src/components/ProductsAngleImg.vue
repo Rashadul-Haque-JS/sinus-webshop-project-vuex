@@ -1,26 +1,14 @@
 <template>
   <div class="wrapper">
     <article class="small-layout">
-      <img :src="require(`../assets/${product.itemImg}.svg`)" />
-    </article>
-    <article class="small-layout">
-      <img :src="require(`../assets/${product.itemImg}.svg`)" />
-    </article>
-    <article class="small-layout">
-      <img :src="require(`../assets/${product.itemImg}.svg`)" />
-    </article>
-    <article class="small-layout">
-      <img :src="require(`../assets/${product.itemImg}.svg`)" />
-    </article>
-    <article class="small-layout">
-      <img :src="require(`../assets/${product.itemImg}.svg`)" />
+      <img :src="require(`../assets/${image}.svg`)" />
     </article>
   </div>
 </template>
 
 <script>
 export default {
-  props: { product: Object },
+  props: ["image"],
 };
 </script>
 
@@ -37,6 +25,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    border-bottom: 4px solid #fff;
     img {
       width: 132px;
       height: 120px;
