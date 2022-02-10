@@ -36,27 +36,28 @@ export default {
   box-sizing: border-box;
 }
 .card-layout {
-  width: 265px;
-  height: 380px;
+  width: 199px;
+  height: 285px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   background-color: #e0e0e0;
+  font-size:75%;
   .product-image {
     width: 100%;
-    height: 254px;
+    height: 190px;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
 
     .single-product {
-      width: 154px;
-      height: 201px;
+      width: 116px;
+      height: 151px;
     }
 
     .cart-icon {
       position: absolute;
-      width: 24px;
-      height: 24px;
+      width: 18px;
+      height: 18px;
 
       right: 8px;
       top: 8px;
@@ -64,7 +65,7 @@ export default {
   }
 
   .product-info {
-    height: 124px;
+    height: 100px;
 
     background-color: #ffffff;
     padding: 8px;
@@ -72,8 +73,8 @@ export default {
 
     img {
       width: fit-content;
-      width: 20px;
-      height: 17px;
+      width: 15px;
+      height: 12.75px;
       position: absolute;
       top: 12px;
       right: 12px;
@@ -85,7 +86,7 @@ export default {
       font-family: Montserrat;
       font-style: normal;
       font-weight: 600;
-      font-size: 20px;
+      font-size: 16px;
       line-height: 26px;
       /* identical to box height, or 130% */
 
@@ -95,12 +96,12 @@ export default {
     .product-size {
       text-align: start;
       margin-left: 8px;
-      margin-top: 8px;
+      margin-top: 0px;
 
       font-family: Inter;
       font-style: normal;
       font-weight: normal;
-      font-size: 13px;
+      font-size: 10px;
       line-height: 18px;
       /* identical to box height, or 138% */
 
@@ -111,12 +112,12 @@ export default {
 
     .product-price {
       text-align: start;
-      margin: 2px 0px 0px 8px;
+      margin: 0px 0px 0px 8px;
 
       font-family: Inter;
       font-style: normal;
       font-weight: 600;
-      font-size: 16px;
+      font-size: 12px;
       line-height: 19px;
       letter-spacing: -0.1px;
 
@@ -126,20 +127,20 @@ export default {
     .rating {
       text-align: end;
       position: absolute;
-      bottom: -6px;
+      bottom: 0px;
       left: 16px;
       color: #ffd000;
-      font-size: 1.8rem;
+      font-size: 1.2rem;
     }
     .btn {
       background-color: #1c1c1c;
       position: absolute;
-      padding: 2px 8px;
+      padding: 2px 4px;
       bottom: 8px;
       right: 8px;
       color: #fff;
       cursor: pointer;
-      font-size: 0.8rem;
+      font-size: 0.5rem;
     }
 
     .btn:hover {

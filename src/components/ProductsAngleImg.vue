@@ -18,8 +18,8 @@ export default {
   flex-direction: column;
   align-items: center;
   .small-layout {
-    width: 240px;
-    height: 154px;
+    width: 180px;
+    height: 116px;
     background-color: #e0e0e0;
 
     display: flex;
@@ -27,8 +27,8 @@ export default {
     align-items: center;
     border-bottom: 4px solid #fff;
     img {
-      width: 132px;
-      height: 120px;
+      width: 99px;
+      height: 90px;
       cursor: pointer;
     }
 

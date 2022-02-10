@@ -18,8 +18,8 @@
       </div>
       <div class="product-details">
         <h1>Product's Information</h1>
-        <h2>{{ product.name }}</h2>
-        <p>Sizes: {{ " " + product.size }}</p>
+        <h2 :class="color">{{ product.name }}</h2>
+        <p class="size">Sizes: {{ " " + product.size }}</p>
         <h3>{{ product.currency.local }} {{ product.price }}</h3>
         <p class="descriptions">
           <strong>Description:</strong
@@ -50,15 +50,15 @@
     <div class="misc-block">
       <h2>THIS BLOCK IS RESERVED FOR FUTURE UPDATES......</h2>
     </div>
-    <Footer />
+    
   </div>
 </template>
 
 <script>
 import ProductAngle from "../components/ProductsAngleImg.vue";
-import Footer from "../components/Footer.vue";
+
 export default {
-  components: { ProductAngle, Footer },
+  components: { ProductAngle, },
   computed: {
     product() {
       return this.$store.getters.productsList.find(
@@ -68,6 +68,13 @@ export default {
 
     images() {
       return this.product.multiImgs;
+    },
+
+    color() {
+      let str = this.product;
+
+      const parts = str.itemImg.split("_");
+      return parts[parts.length - 1];
     },
   },
 
@@ -81,8 +88,6 @@ export default {
 
 <style lang="scss" scoped>
 * {
-  //   margin: 0;
-  //   padding: 0;
   box-sizing: border-box;
 }
 
@@ -99,23 +104,68 @@ export default {
       position: relative;
 
       .large-image {
-        width: 526px;
-        height: 380px;
+        width: 394px;
+        height: 285px;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-left: 200px;
+        margin-left: 100px;
         margin-top: 24px;
 
         .single-product {
-          width: 400px;
-          height: 420px;
+          width: 300px;
+          height: 315px;
         }
       }
     }
     .product-details {
-      margin: 100px 20px 0px 200px;
+      margin: 100px 32px 0px 100px;
+
+      h1 {
+        font-size: 1.4rem;
+      }
+      h2 {
+        font-size: 1.2rem;
+      }
+      .red {
+        color: rgba(196, 21, 20, 0.8);
+      }
+      .green {
+        color: #389225;
+      }
+
+      .purple {
+        color: #49226c;
+      }
+
+      .ocean {
+        color: #2a527d;
+      }
+
+      .black {
+        color: #454547;
+      }
+
+      .yellow {
+        color: #a77f1f;
+      }
+      .blue {
+        color: #213487;
+      }
+
+      .pink {
+        color: #c56e94;
+      }
+
+      .size {
+        font-size: 0.8rem;
+      }
+      h3 {
+        font-size: 0.8rem;
+      }
+
       .descriptions {
+        font-size: 0.8rem;
         span {
           display: block;
         }
@@ -151,7 +201,8 @@ export default {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 400px;
+    height: 300px;
+    font-size: 0.8rem;
     border: 1px dotted #000;
     margin: 196px 0px;
   }

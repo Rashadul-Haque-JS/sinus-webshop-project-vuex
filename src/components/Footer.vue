@@ -11,8 +11,10 @@ export default {};
 <style lang="scss" scoped>
 .footer {
   margin-top: 260px;
+ 
   img {
     width: 100%;
+    
   }
 }
 </style>

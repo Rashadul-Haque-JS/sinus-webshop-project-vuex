@@ -14,17 +14,28 @@
         <router-link to="/Login"
           ><img class="avatar" src="@/assets/login.svg" alt="login-avatar"
         /></router-link>
-        <router-link to="/Checkout"
-          ><img class="cart" src="@/assets/cart.svg" alt="Cart"
+        <router-link class="checkout" to="/Checkout"
+          >
+          <span v-if="inCart">{{inCart.length}}</span>
+          <img class="cart" src="@/assets/cart.svg" alt="Cart"
         /></router-link>
       </div>
     </div>
     <router-view />
+    <Footer/>
   </div>
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
+import Footer from '../src/components/Footer.vue'
 export default {
+  components:{Footer},
+
+  computed:{
+    ...mapGetters({inCart: "cartsItems" }),
+  }
+  
   
 };
 </script>
@@ -32,6 +43,7 @@ export default {
 <style lang="scss">
 html body{
   background-color: #FCFCF8;
+  margin:0;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -43,16 +55,17 @@ html body{
 
 #nav {
   width: 100%;
-  height: 84px;
+  height: 56px;
   background-color: rgba(196, 21, 20, 0.8);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin:0;
 
   .sinus-logo {
-    width: 184px;
-    height: 80px;
-    margin-left: 24px;
+    width: 120px;
+    height: 48px;
+    margin-left: 16px;
   }
 
   a {
@@ -71,6 +84,8 @@ html body{
 
     a {
       margin: 0px 12px;
+      font-size:.8rem;
+      text-decoration: none;
     }
   }
 
@@ -81,24 +96,45 @@ html body{
     margin-right: 16px;
     input {
       padding: 0px 5px;
-      width: 208px;
-      height: 24px;
+      width: 152px;
+      height: 18px;
       border: none;
-      border-radius: 4px;
+      border-radius: 2px;
     }
 
     a {
       margin: 0px 12px;
     }
     .avatar {
-      width: 24px;
-      height: 24px;
+      width: 18px;
+      height: 18px;
+    }
+    .checkout{
+      position:relative;
+
+       .cart {
+      width: 30px;
+      height: 30px;
+
+      
+    }
+    span{
+      width:16px;
+      height:16px;
+      display:flex;
+      align-items: center;
+      justify-content:center;
+        position:absolute;
+        top:0;
+        right:-6px;
+        color:#fff;
+        font-size:.6rem;
+        border-radius:100%;
+        background-color:#000;
+      }
     }
 
-    .login {
-      width: 40px;
-      height: 40px;
-    }
+   
   }
 }
 </style>

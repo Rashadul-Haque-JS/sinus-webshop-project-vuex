@@ -15,16 +15,16 @@
         </router-link>
       </div>
     </div>
-    <Footer />
+ 
   </div>
 </template>
 
 <script>
 import ProductsCardFroList from "../components/ProductsCardForList.vue";
-import Footer from "../components/Footer.vue";
+
 import { mapGetters } from "vuex";
 export default {
-  components: { ProductsCardFroList, Footer },
+  components: { ProductsCardFroList},
   data() {
     return {};
   },
@@ -46,8 +46,12 @@ export default {
     text-align: start;
     margin: 24px 0px 0px 72px;
   }
-}
-.gallery {
+
+  a{
+    text-decoration:none;
+  }
+
+  .gallery {
   display: grid;
   grid-template-columns: 5fr 1fr;
 
@@ -74,4 +78,6 @@ export default {
     margin-top: 196px;
   }
 }
+}
+
 </style>
