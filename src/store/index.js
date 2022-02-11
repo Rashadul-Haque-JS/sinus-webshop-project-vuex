@@ -78,14 +78,25 @@ export default new Vuex.Store({
     //Uses in checkout.vue for building dynamic cards.
     cartsObj: (state) => state.cart.map(id => state.products.find(product => product.id == id)),
 
+    updatedTotalOnRemoval(state,context) {
+      let initCartItems = context.cartsObj.map(item => item)
+      let updatedCartItems = state.cartsUpdatedQty.map(element => element)
 
+      return initCartItems != updatedCartItems ? initCartItems : updatedCartItems
 
-    //Uses in checkout.vue for updating qty of items in clients sides.
-    // getQuantity: (state) => state.cartsUpdatedQty
+    }
 
+    // filterOut: (state) => state.cartsUpdatedQty.filter(el => state.cart.map(i => i == el.id),
 
+    // filterOut(state,context) {
+    //   let x = context.cartsObj.map(a => a)
+    //   let y = state.cartsUpdatedQty.map(b => b)
 
+    //   if (x != y) {
+    //     return x
+    //   } else { return y }
 
+    // }
 
 
   },

@@ -22,7 +22,7 @@
       </select>
     </div>
 
-    <span class="price"> {{ item.currency.local }}{{ totalForItem }}</span>
+    <p class="price"> <span>{{ item.currency.local }}</span>{{ totalForItem }}</p>
 
     <div class="remove-item">
       <img src="../assets/love_icon.svg" alt="love icon" />
@@ -87,6 +87,7 @@ export default {
       margin-left: 56px;
       align-items: center;
       h3 {
+        width: 136;
         margin: 0px;
         font-family: Montserrat;
         font-size: 1rem;
@@ -122,6 +123,10 @@ export default {
   .price {
     font-size: 0.8rem;
     font-weight: bold;
+
+    span{
+      margin-right: 4px;
+    }
   }
 
   .remove-item {

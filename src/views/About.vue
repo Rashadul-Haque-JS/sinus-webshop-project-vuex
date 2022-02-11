@@ -106,13 +106,16 @@ export default {
 <style lang="scss" scoped>
 .about {
   width: 100%;
-  margin: 40px auto 0px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   h1 {
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
   p {
     q {
-      font-size: 1.2rem;
+      font-size: 1rem;
       margin-top: 16px;
     }
   }
@@ -130,9 +133,9 @@ export default {
         font-weight: bold;
       }
       p {
-        font-size: 1.2rem;
+        font-size: 1rem;
         text-align: start;
-        line-height: 1.6rem;
+        line-height: 1.4rem;
       }
     }
   }

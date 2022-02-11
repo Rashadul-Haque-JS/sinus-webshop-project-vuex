@@ -16,14 +16,14 @@
         </div>
         <div class="payment-details">
           <p>
-            <strong>PRICE :</strong>
+            <strong>PRICE:</strong>
             <strong>{{ grandTotal }}</strong>
           </p>
-          <p><strong>VAT :</strong></p>
-          <p><strong>DISCOUNT :</strong></p>
+          <p><strong>VAT:</strong></p>
+          <p><strong>DISCOUNT:</strong></p>
         </div>
         <div class="payment-action">
-          <h3>Total To Pay:</h3>
+          <h3>AMOUNT TO PAY:</h3>
           <div class="action-sub">
             <button class="pay-now">Checkout</button>
             <router-link to="/ProductGallery">Back to shop</router-link>
@@ -44,11 +44,11 @@ import CartsSingleItem from "../components/CartsSingleItem.vue";
 export default {
   components: { CartsSingleItem },
   computed: {
-    ...mapGetters({ inCart: "cartsObj"}),
+    ...mapGetters({ inCart: "cartsObj", inCartQty: "updatedTotalOnRemoval" }),
 
-    inCartQty(){
-      return this.$store.state.cartsUpdatedQty
-    },
+    // inCartQty(){
+    //   return this.$store.getters.filterOut
+    // },
 
     grandTotal() {
       let total = 0;
@@ -58,8 +58,6 @@ export default {
       return total;
     },
   },
-
-  
 };
 </script>
 
