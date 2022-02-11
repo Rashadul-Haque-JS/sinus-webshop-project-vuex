@@ -14,7 +14,7 @@
         @change="addQtty"
         class="quantity"
         name="quantity"
-        v-model.trim="prodsObj.quantity"
+        v-model="checkOutProduct.quantity"
         required
       >
         <option v-for="number in numbers" :key="number" :value="number">
@@ -22,6 +22,9 @@
         </option>
       </select>
     </div>
+
+    <span class="price"> {{ item.currency.local }}{{ totalForItem }}</span>
+
     <div class="remove-item">
       <img src="../assets/love_icon.svg" alt="love icon" />
       <button @click="remove">Remove</button>
@@ -32,9 +35,8 @@
 <script>
 import ProductsAngleImg from "../components/ProductsAngleImg.vue";
 
-
 export default {
-  props: { item: Object, idx:Number },
+  props: { item: Object, idx: Number },
   components: { ProductsAngleImg },
   data() {
     return {
@@ -43,36 +45,37 @@ export default {
       image: this.item.itemImg,
 
       // FOR SENDING QTY TO STORE ******************************
-      prodsObj: {
-        id: this.item.id,
+      checkOutProduct: {
+        obj: this.item,
         quantity: null,
       },
     };
   },
 
   computed: {
-    total() {
-      return this.item.price * this.quantity;
+    totalForItem() {
+      return this.item.price * this.checkOutProduct.quantity;
     },
   },
   methods: {
     addQtty() {
-      this.$store.dispatch("addQty", this.prodsObj);
+      this.$store.dispatch("addQty", this.checkOutProduct);
     },
 
-    remove(){
+    remove() {
       this.$store.dispatch("removeProduct", this.idx);
-    }
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
 .container {
-  width: 750px;
+  width: 776px;
   height: 90px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   padding: 16px 24px;
   margin: 32px 0px 0px 24px;
@@ -80,7 +83,7 @@ export default {
   .item-info {
     display: flex;
     justify-content: space-between;
-    margin-right: 50px;
+
     align-items: center;
     .comp-img {
       align-items: center;
@@ -88,11 +91,12 @@ export default {
       height: 96px;
     }
     .text-info {
-      margin-left: 64px;
+      margin-left: 56px;
       align-items: center;
       h3 {
         margin: 0px;
         font-family: Montserrat;
+        font-size: 1rem;
 
         font-weight: bold;
 
@@ -113,21 +117,25 @@ export default {
   }
 
   .quantities {
-    display: flex;
-    justify-content: space-between;
+    font-size: 0.9rem;
 
-    align-items: center;
-    margin-left:40px;
     .quantity {
-      border: none;
+      border-radius: 5px;
+      background-color: #f0ffff;
+      margin-left: 4px;
     }
+  }
+
+  .price {
+    font-size: 0.8rem;
+    font-weight: bold;
   }
 
   .remove-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 100px;
+    // margin-left: 100px;
 
     img {
       width: 18px;

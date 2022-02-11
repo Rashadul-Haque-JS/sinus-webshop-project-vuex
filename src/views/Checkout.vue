@@ -11,10 +11,16 @@
         </div>
       </article>
       <article v-if="inCart.length" class="payment">
+        <div class="extra">
+          <img src="../assets/sustainability.svg" alt="sust-img">
+        </div>
         <div class="payment-details">
-          <p>Lorem ipsum</p>
-          <p>Lorem ipsum</p>
-          <p>Lorem ipsum</p>
+          <p v-for="el in inCartQty" :key="el.obj.id">
+            <strong>PRICE :</strong>
+            <strong>{{ el.obj.price * el.quantity }}</strong>
+          </p>
+          <p> <strong>VAT :</strong></p>
+          <p><strong>DISCOUNT :</strong></p>
         </div>
         <div class="payment-action">
           <h3>Lorem ipsum</h3>
@@ -28,7 +34,6 @@
     <div class="misc-block">
       <h2>THIS BLOCK IS RESERVED FOR FUTURE UPDATES......</h2>
     </div>
-  
   </div>
 </template>
 
@@ -37,9 +42,9 @@ import { mapGetters } from "vuex";
 import CheckoutItem from "../components/CheckoutItem.vue";
 
 export default {
-  components: { CheckoutItem,  },
+  components: { CheckoutItem },
   computed: {
-    ...mapGetters({ inCart: "cartsObj" }),
+    ...mapGetters({ inCart: "cartsObj", inCartQty: "getQuantity" }),
   },
 };
 </script>
@@ -70,13 +75,28 @@ export default {
       width: 288px;
       height: 550px;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-      padding: 32px;
-      margin: 32px 48px 0px 48px;
+      padding: 12px;
+      margin: 32px 68px 0px 8px;
+
+      .extra {
+        width: 100%;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+      }
 
       .payment-details {
         width: 100%;
-        height: 250px;
+        max-height: 50px;
         text-align: start;
+
+        p {
+          display: flex;
+          justify-content: space-between;
+          font-size: 0.9rem;
+        
+        }
       }
 
       .payment-action {
@@ -117,7 +137,9 @@ export default {
     background-color: #c0bebe;
     margin: 196px 0px;
 
-    h2{margin-top: 64px;}
+    h2 {
+      margin-top: 64px;
+    }
   }
 }
 </style>

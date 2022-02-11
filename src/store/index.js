@@ -14,7 +14,7 @@ export default new Vuex.Store({
     cart: [],
 
     qty: [],
-    total:null
+
 
 
 
@@ -27,17 +27,19 @@ export default new Vuex.Store({
     },
 
     addQty(state, payload) {
+
       state.qty.push(payload)
+
     },
 
     removeProduct(state, payload) {
-      state.cart.splice(payload,1)
+      state.cart.splice(payload, 1)
     }
 
 
   },
 
-// ACTIONS.............................................
+  // ACTIONS.............................................
   actions: {
     toCart(context, payload) {
       if (!context.state.cart.includes(payload)) {
@@ -47,10 +49,11 @@ export default new Vuex.Store({
     },
 
     addQty(context, payload) {
-      if (!context.state.qty.includes(payload.id)) {
+      if (!context.state.qty.includes(payload.obj.id)) {
         context.commit("addQty", payload)
       } else {
-        context.commit('addQty', payload.quantity[payload.quantity])
+        context.commit('addQty', payload.quantity)
+
       }
 
     },
@@ -69,18 +72,15 @@ export default new Vuex.Store({
 
     cartsObj: (state) => state.cart.map(id => state.products.find(product => product.id == id)),
 
+    getQuantity(state) {
+      let unqObj = new Set(state.qty)
+      return unqObj
+    }
 
-    // NEED MORE UPDATES **************************
-    // objQty:(state) => state.qty,
 
 
 
   },
 
-
-
-
-  // modules: {
-  // },
 
 });
