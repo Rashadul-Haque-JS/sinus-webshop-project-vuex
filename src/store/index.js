@@ -7,43 +7,45 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
 
-  // STATE.................................
+  // State.................................
   state: {
     products: [...items],
 
     cart: [],
 
     cartsUpdatedQty: [],
+},
 
-
-
-
-  },
-
-  // MUTATIONS.................................
+  // Mutations.................................
   mutations: {
+
+    //Add to the cart
     toCart(state, payload) {
       state.cart.push(payload);
     },
 
+    // Update product's quantity
     addQty(state, payload) {
-      if (!state.cartsUpdatedQty.includes(payload.id)) {
+      if (!state.cartsUpdatedQty.includes(payload)) {
         state.cartsUpdatedQty.push(payload)
       } else {
-        state.cartsUpdatedQty.payload.quantity[payload.quantity]
-
+        let object = state.cartsUpdatedQty.find(item => item.id === payload.id)
+        object.quantity[payload.quantity];
       }
-
     },
 
+
+    //Remove products from the cart
     removeProduct(state, payload) {
       state.cart.splice(payload, 1)
+
+      
     }
 
 
   },
 
-  // ACTIONS.............................................
+  // Actions........to manage mutations..............
   actions: {
     toCart(context, payload) {
       if (!context.state.cart.includes(payload)) {
@@ -63,17 +65,14 @@ export default new Vuex.Store({
 
   },
 
-  // GETTERS.............................................
+  // Getters.............................................
   getters: {
     productsList: (state) => state.products,
     cartsItems: (state) => state.cart,
 
     cartsObj: (state) => state.cart.map(id => state.products.find(product => product.id == id)),
 
-    getQuantity(state) {
-      let unqObj = new Set(state.cartsUpdatedQty)
-      return unqObj
-    },
+    getQuantity: (state) => state.cartsUpdatedQty
 
 
 
