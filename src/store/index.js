@@ -30,7 +30,7 @@ export default new Vuex.Store({
         state.cartsUpdatedQty.push(payload)
       } else {
         let object = state.cartsUpdatedQty.find(item => item.id === payload.id)
-        object.quantity[payload.quantity];
+        object.quantity = payload.quantity;
       }
     },
 
