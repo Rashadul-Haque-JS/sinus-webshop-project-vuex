@@ -12,18 +12,18 @@
       </article>
       <article v-if="inCart.length" class="payment">
         <div class="extra">
-          <img src="../assets/sustainability.svg" alt="sust-img">
+          <img src="../assets/sustainability.svg" alt="sust-img" />
         </div>
         <div class="payment-details">
-          <p v-for="el in inCartQty" :key="el.id">
+          <p>
             <strong>PRICE :</strong>
-            <strong>{{ el.price * el.quantity }}</strong>
+            <strong>{{ grandTotal }}</strong>
           </p>
-          <p> <strong>VAT :</strong></p>
+          <p><strong>VAT :</strong></p>
           <p><strong>DISCOUNT :</strong></p>
         </div>
         <div class="payment-action">
-          <h3>Lorem ipsum</h3>
+          <h3>Total To Pay:</h3>
           <div class="action-sub">
             <button class="pay-now">Checkout</button>
             <router-link to="/ProductGallery">Back to shop</router-link>
@@ -45,6 +45,14 @@ export default {
   components: { CartsSingleItem },
   computed: {
     ...mapGetters({ inCart: "cartsObj", inCartQty: "getQuantity" }),
+
+    grandTotal() {
+      let total = 0;
+      this.inCartQty.forEach((element) => {
+        total += element.price * element.quantity;
+      });
+      return total;
+    },
   },
 };
 </script>
@@ -93,9 +101,11 @@ export default {
 
         p {
           display: flex;
-          justify-content: space-between;
-          font-size: 0.9rem;
-        
+            justify-content: space-between;
+          strong {
+            text-align: start;
+            font-size: 0.8rem;
+          }
         }
       }
 
@@ -104,6 +114,10 @@ export default {
         height: 300px;
         margin-top: 80px;
         border-top: solid 1px #545454;
+
+        h3 {
+          font-size: 0.9rem;
+        }
 
         .action-sub {
           display: flex;

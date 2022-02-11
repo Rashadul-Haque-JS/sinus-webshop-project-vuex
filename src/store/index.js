@@ -73,7 +73,9 @@ export default new Vuex.Store({
     getQuantity(state) {
       let unqObj = new Set(state.cartsUpdatedQty)
       return unqObj
-    }
+    },
+
+
 
 
 
