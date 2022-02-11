@@ -5,7 +5,6 @@
       <div class="text-info">
         <h3>{{ item.name }}</h3>
         <p>{{ item.size }}</p>
-      
       </div>
     </div>
     <div class="quantities">
@@ -42,10 +41,7 @@ export default {
     return {
       numbers: 10,
       image: this.item.itemImg,
-      customsChoice:{...this.item}
-
-      
-      
+      customsChoice: this.item,
     };
   },
 

@@ -16,7 +16,7 @@
         /></router-link>
         <router-link class="checkout" to="/Checkout"
           >
-          <span v-if="inCart">{{inCart.length}}</span>
+          <span>{{inCart.length}}</span>
           <img class="cart" src="@/assets/cart.svg" alt="Cart"
         /></router-link>
       </div>

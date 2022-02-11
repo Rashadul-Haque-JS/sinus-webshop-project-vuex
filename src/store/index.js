@@ -14,7 +14,7 @@ export default new Vuex.Store({
     cart: [],
 
     cartsUpdatedQty: [],
-},
+  },
 
   // Mutations.................................
   mutations: {
@@ -39,7 +39,10 @@ export default new Vuex.Store({
     removeProduct(state, payload) {
       state.cart.splice(payload, 1)
 
-      
+
+
+
+
     }
 
 
@@ -68,11 +71,17 @@ export default new Vuex.Store({
   // Getters.............................................
   getters: {
     productsList: (state) => state.products,
+
+    //Uses in app.vue for showing cart's item numbers
     cartsItems: (state) => state.cart,
 
+    //Uses in checkout.vue for building dynamic cards.
     cartsObj: (state) => state.cart.map(id => state.products.find(product => product.id == id)),
 
-    getQuantity: (state) => state.cartsUpdatedQty
+
+
+    //Uses in checkout.vue for updating qty of items in clients sides.
+    // getQuantity: (state) => state.cartsUpdatedQty
 
 
 

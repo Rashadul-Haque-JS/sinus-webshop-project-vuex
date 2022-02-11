@@ -44,7 +44,11 @@ import CartsSingleItem from "../components/CartsSingleItem.vue";
 export default {
   components: { CartsSingleItem },
   computed: {
-    ...mapGetters({ inCart: "cartsObj", inCartQty: "getQuantity" }),
+    ...mapGetters({ inCart: "cartsObj"}),
+
+    inCartQty(){
+      return this.$store.state.cartsUpdatedQty
+    },
 
     grandTotal() {
       let total = 0;
@@ -54,6 +58,8 @@ export default {
       return total;
     },
   },
+
+  
 };
 </script>
 
@@ -101,7 +107,7 @@ export default {
 
         p {
           display: flex;
-            justify-content: space-between;
+          justify-content: space-between;
           strong {
             text-align: start;
             font-size: 0.8rem;

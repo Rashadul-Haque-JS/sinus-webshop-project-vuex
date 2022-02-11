@@ -9,7 +9,9 @@
 <script>
 export default {
   props: ["image"],
-};
+
+}
+
 </script>
 
 <style lang="scss" scoped>
