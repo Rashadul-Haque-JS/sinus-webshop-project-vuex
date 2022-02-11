@@ -7,7 +7,7 @@
     <div class="checkout-wrapper">
       <article class="cart-items">
         <div v-for="(item, idx) in inCart" :key="item.id" :idx="idx">
-          <CheckoutItem :item="item" :idx="idx" />
+          <CartsSingleItem :item="item" :idx="idx" />
         </div>
       </article>
       <article v-if="inCart.length" class="payment">
@@ -15,9 +15,9 @@
           <img src="../assets/sustainability.svg" alt="sust-img">
         </div>
         <div class="payment-details">
-          <p v-for="el in inCartQty" :key="el.obj.id">
+          <p v-for="el in inCartQty" :key="el.id">
             <strong>PRICE :</strong>
-            <strong>{{ el.obj.price * el.quantity }}</strong>
+            <strong>{{ el.price * el.quantity }}</strong>
           </p>
           <p> <strong>VAT :</strong></p>
           <p><strong>DISCOUNT :</strong></p>
@@ -39,10 +39,10 @@
 
 <script>
 import { mapGetters } from "vuex";
-import CheckoutItem from "../components/CheckoutItem.vue";
+import CartsSingleItem from "../components/CartsSingleItem.vue";
 
 export default {
-  components: { CheckoutItem },
+  components: { CartsSingleItem },
   computed: {
     ...mapGetters({ inCart: "cartsObj", inCartQty: "getQuantity" }),
   },

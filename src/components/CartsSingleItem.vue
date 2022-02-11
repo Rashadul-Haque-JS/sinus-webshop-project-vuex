@@ -5,7 +5,7 @@
       <div class="text-info">
         <h3>{{ item.name }}</h3>
         <p>{{ item.size }}</p>
-        <!-- <span>{{total}}</span> -->
+      
       </div>
     </div>
     <div class="quantities">
@@ -14,7 +14,7 @@
         @change="addQtty"
         class="quantity"
         name="quantity"
-        v-model="checkOutProduct.quantity"
+        v-model="customsChoice.quantity"
         required
       >
         <option v-for="number in numbers" :key="number" :value="number">
@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import ProductsAngleImg from "../components/ProductsAngleImg.vue";
+import ProductsAngleImg from "./ProductsAngleImg.vue";
 
 export default {
   props: { item: Object, idx: Number },
@@ -41,25 +41,22 @@ export default {
   data() {
     return {
       numbers: 10,
-
       image: this.item.itemImg,
+      customsChoice:{...this.item}
 
-      // FOR SENDING QTY TO STORE ******************************
-      checkOutProduct: {
-        obj: this.item,
-        quantity: null,
-      },
+      
+      
     };
   },
 
   computed: {
     totalForItem() {
-      return this.item.price * this.checkOutProduct.quantity;
+      return this.customsChoice.price * this.customsChoice.quantity;
     },
   },
   methods: {
     addQtty() {
-      this.$store.dispatch("addQty", this.checkOutProduct);
+      this.$store.dispatch("addQty", this.customsChoice);
     },
 
     remove() {
