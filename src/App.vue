@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <div id="nav">
-      <img class="sinus-logo" src="@/assets/sinus_logo.svg" alt="Sinus logo" />
+      <router-link to="/" class="logo-in-route"
+        ><img class="sinus-logo" src="@/assets/sinus_logo.svg" alt="Sinus logo"
+      /></router-link>
       <div class="nav-pages">
         <router-link to="/">Home</router-link>
         <router-link to="/ProductGallery">Products</router-link>
@@ -14,39 +16,33 @@
         <router-link to="/Login"
           ><img class="avatar" src="@/assets/login.svg" alt="login-avatar"
         /></router-link>
-        <router-link class="checkout" to="/Checkout"
-          >
-          <span>{{inCart.length}}</span>
+        <router-link class="checkout" to="/Checkout">
+          <span>{{ inCart.length }}</span>
           <img class="cart" src="@/assets/cart.svg" alt="Cart"
         /></router-link>
       </div>
     </div>
     <router-view />
-    <Footer/>
+    <Footer />
   </div>
 </template>
 
 <script>
-import {mapGetters} from 'vuex'
-import Footer from '../src/components/Footer.vue'
+import { mapGetters } from "vuex";
+import Footer from "../src/components/Footer.vue";
 export default {
-  components:{Footer},
+  components: { Footer },
 
-  computed:{
-    ...mapGetters({inCart: "cartsItems" }),
-  }
-  
-  
+  computed: {
+    ...mapGetters({ inCart: "cartsItems" }),
+  },
 };
 </script>
 
 <style lang="scss">
-
-
-html body{
-  background-color: #FCFCF8;
-  margin:0;
- 
+html body {
+  background-color: #fcfcf8;
+  margin: 0;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -63,7 +59,11 @@ html body{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin:0;
+  margin: 0;
+
+  .logo-in-route{
+    margin-top: 4px;
+  };
 
   .sinus-logo {
     width: 120px;
@@ -87,7 +87,7 @@ html body{
 
     a {
       margin: 0px 12px;
-      font-size:.8rem;
+      font-size: 0.8rem;
       text-decoration: none;
     }
   }
@@ -112,32 +112,28 @@ html body{
       width: 18px;
       height: 18px;
     }
-    .checkout{
-      position:relative;
+    .checkout {
+      position: relative;
 
-       .cart {
-      width: 30px;
-      height: 30px;
-
-      
-    }
-    span{
-      width:16px;
-      height:16px;
-      display:flex;
-      align-items: center;
-      justify-content:center;
-        position:absolute;
-        top:0;
-        right:-6px;
-        color:#fff;
-        font-size:.6rem;
-        border-radius:100%;
-        background-color:#000;
+      .cart {
+        width: 30px;
+        height: 30px;
+      }
+      span {
+        width: 16px;
+        height: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        right: -6px;
+        color: #fff;
+        font-size: 0.6rem;
+        border-radius: 100%;
+        background-color: #000;
       }
     }
-
-   
   }
 }
 </style>

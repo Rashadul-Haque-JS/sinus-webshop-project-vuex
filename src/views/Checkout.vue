@@ -19,11 +19,17 @@
             <strong>PRICE:</strong>
             <strong>{{ grandTotal }}</strong>
           </p>
-          <p><strong>VAT:</strong></p>
-          <p><strong>DISCOUNT:</strong></p>
+          <p>
+            <strong>DISCOUNTS:</strong> <strong>-{{ discount }}</strong>
+          </p>
         </div>
         <div class="payment-action">
-          <h3>AMOUNT TO PAY:</h3>
+          <h3>
+            <strong>AMOUNT TO PAY:</strong> <strong>{{ netTotal }}</strong>
+          </h3>
+          <span class="vat-info"
+            >VAT(incl.)=(12% of {{ netTotal }}) = {{ vat }} 
+          </span>
           <div class="action-sub">
             <button class="pay-now">Checkout</button>
             <router-link to="/ProductGallery">Back to shop</router-link>
@@ -46,10 +52,6 @@ export default {
   computed: {
     ...mapGetters({ inCart: "cartsObj", inCartQty: "updatedTotalOnRemoval" }),
 
-    // inCartQty(){
-    //   return this.$store.getters.filterOut
-    // },
-
     grandTotal() {
       let total = 0;
       this.inCartQty.forEach((element) => {
@@ -57,11 +59,27 @@ export default {
       });
       return total;
     },
+
+    vat() {
+      return Math.round(this.grandTotal * 0.12);
+    },
+
+    discount() {
+      return Math.round(this.grandTotal * 0.1);
+    },
+
+    netTotal() {
+      return Math.round(this.grandTotal - this.discount);
+    },
   },
 };
 </script>
 
+
+
 <style lang="scss" scoped>
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+
 .wrap {
   display: block;
 
@@ -69,7 +87,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Montserrat;
+
     font-size: 1.2rem;
     height: 300px;
   }
@@ -99,9 +117,14 @@ export default {
       }
 
       .payment-details {
-        width: 100%;
+        width: 95%;
         max-height: 50px;
-        text-align: start;
+
+        margin: 0px;
+        font-family: "Lato", sans-serif;
+
+        font-weight: 400;
+        color: #545454;
 
         p {
           display: flex;
@@ -111,16 +134,38 @@ export default {
             font-size: 0.8rem;
           }
         }
+
+        p:nth-of-type(2){
+          strong{
+            color: red;
+          }
+
+        }
       }
 
       .payment-action {
-        width: 100%;
+        width: 95%;
         height: 300px;
-        margin-top: 80px;
+        margin: 50px auto 0px auto;
         border-top: solid 1px #545454;
+        font-family: "Lato", sans-serif;
 
         h3 {
-          font-size: 0.9rem;
+          display: flex;
+          justify-content: space-between;
+          strong {
+            text-align: start;
+            font-size: 0.8rem;
+          }
+          font-size: 0.8rem;
+          font-weight: bold;
+          color: #1b4b08;
+        }
+
+        span {
+          text-align: center;
+          font-size: 0.7rem;
+          color: #9da1a7;
         }
 
         .action-sub {
@@ -135,7 +180,7 @@ export default {
           }
 
           a {
-            padding: 5px 16px;
+            padding: 3px 16px;
             text-decoration: none;
             text-align: center;
             margin-top: 16px;
