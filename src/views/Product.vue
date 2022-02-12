@@ -43,14 +43,16 @@
 
         <div class="action">
           <button @click="addToCart">ADD TO CART</button>
-          <router-link to="/ProductGallery">BACK</router-link>
+          <div class="next-move">
+            <router-link to="/ProductGallery">BACK</router-link>
+            <router-link to="/Checkout">GO TO CART</router-link>
+          </div>
         </div>
       </div>
     </div>
     <div class="misc-block">
       <h2>THIS BLOCK IS RESERVED FOR FUTURE UPDATES......</h2>
     </div>
-    
   </div>
 </template>
 
@@ -58,7 +60,7 @@
 import ProductAngle from "../components/ProductsAngleImg.vue";
 
 export default {
-  components: { ProductAngle, },
+  components: { ProductAngle },
   computed: {
     product() {
       return this.$store.getters.productsList.find(
@@ -186,11 +188,23 @@ export default {
           box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
             0 3px 6px rgba(0, 0, 0, 0.23);
         }
-        a {
-          text-decoration: none;
-          text-align: center;
+
+        .next-move {
+          display: flex;
+          justify-content: space-between;
           margin-top: 16px;
           border: solid 2px #1c1c1c;
+          padding: 2px 0px;
+
+          a {
+            width: 120px;
+            height: 100%;
+            text-decoration: none;
+            text-align: center;
+            font-size: 0.8rem;
+            box-shadow: 0 0px 6px rgba(0, 0, 0, 0.16),
+              0 0px 6px rgba(0, 0, 0, 0.23);
+          }
         }
       }
     }

@@ -42,11 +42,6 @@ export default {
 
 <style lang="scss">
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;800&display=swap');
-
-*{
-  font-family: 'Poppins', sans-serif;;
-}
 
 html body{
   background-color: #FCFCF8;

@@ -8,7 +8,6 @@
       </div>
     </div>
     <div class="quantities">
-      <label for="date">Qty:</label>
       <select
         @change="addQtty"
         class="quantity"
@@ -20,9 +19,13 @@
           {{ number }}
         </option>
       </select>
+      <span class="price-info">{{ item.price + "/ITEM" }}</span>
     </div>
 
-    <p class="price"> <span>{{ item.currency.local }}</span>{{ totalForItem }}</p>
+    <p class="price">
+      <span>{{ item.currency.local }}</span
+      >{{ totalForItem }}
+    </p>
 
     <div class="remove-item">
       <img src="../assets/love_icon.svg" alt="love icon" />
@@ -87,7 +90,7 @@ export default {
       margin-left: 56px;
       align-items: center;
       h3 {
-        width: 136;
+        width: 138px;
         margin: 0px;
         font-family: Montserrat;
         font-size: 1rem;
@@ -115,16 +118,25 @@ export default {
 
     .quantity {
       border-radius: 5px;
-      background-color: #f0ffff;
+      border: 0.5px solid #1c1c1c;
+      width: 48px;
+    }
+
+    .price-info {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 10px;
+      line-height: 18px;
+      letter-spacing: -0.2px;
       margin-left: 4px;
+      color: #9da1a7;
     }
   }
 
   .price {
     font-size: 0.8rem;
-    font-weight: bold;
-
-    span{
+    span {
+      font-weight: 400;
       margin-right: 4px;
     }
   }
@@ -133,7 +145,6 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    // margin-left: 100px;
 
     img {
       width: 18px;
